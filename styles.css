@@ -833,41 +833,82 @@ body {
     }
 }
 
-/* Responsive for account pages */
+/* Responsive for rate cards - make horizontal on mobile */
 @media (max-width: 768px) {
-    .page-header h1 {
-        font-size: 2.5rem;
+    .rate-card-section {
+        padding: 3rem 1rem;
     }
     
-    .page-header p {
-        font-size: 1.2rem;
+    .rate-card-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
     }
     
-    .accounts-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 1rem;
+    .rate-card-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding: 1rem 0;
+        width: 100%;
     }
     
-    .account-card {
+    .rate-card {
+        flex: 0 0 85%;
+        min-width: 250px;
+        scroll-snap-align: center;
+        margin-right: 1rem;
         padding: 1.5rem;
     }
     
-    .account-avatar {
-        width: 60px;
-        height: 60px;
+    .rate-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
     
-    .account-info h3 {
-        font-size: 1.3rem;
+    .rate-price {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
     }
     
-    .account-info p {
-        font-size: 1rem;
+    .rate-price span {
+        font-size: 0.9rem;
     }
     
-    .stat-number {
+    .rate-features li {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    /* Hide scrollbar but keep functionality */
+    .rate-card-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .rate-card-container {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .rate-card {
+        flex: 0 0 90%;
+        min-width: 220px;
+        padding: 1.25rem;
+    }
+    
+    .rate-card-section h2 {
         font-size: 1.5rem;
+    }
+    
+    .rate-price {
+        font-size: 1.8rem;
+    }
+    
+    .rate-card h3 {
+        font-size: 1.1rem;
     }
 }
 
